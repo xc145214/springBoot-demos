@@ -8,6 +8,8 @@
     <modules>
         <module>quick-start</module>
         <module>simple-web</module>
+        <module>restfull-api</module>
+        <module>properties-config</module>
     </modules>
     <packaging>pom</packaging>
 
