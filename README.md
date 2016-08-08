@@ -4,6 +4,7 @@
     + [x] [Spring Boot快速入门](Doc/01.quick-start.md)
     + [x] [Spring Boot开发Web应用](Doc/02.simple-web.md)
     + [x] [Spring Boot工程结构推荐](Doc/03.project-structure.md)
+    + [x] [Spring Boot构建RESTful API与单元测试](Doc/04.RestFull-api.md)
 
 
 **声明**
