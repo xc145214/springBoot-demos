@@ -1,0 +1,20 @@
+
+spring:
+    main:
+      banner-mode:off
+
+    profiles:
+      active:dev
+
+com:
+    didispace:
+        blog:
+            name:pandaX
+            title:Spring Boot Title
+            desc:${com.didispace.blog.name}正在努力写《${com.didispace.blog.title}》
+            value:${random.value}
+            number:${random.int}
+            bignumber:${random.long}
+            test1:${random.int(10)}
+            test2:${random.int[10,20]}
+
