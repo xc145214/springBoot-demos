@@ -9,6 +9,7 @@
     + [x] [构建RESTful API与单元测试](Doc/03.RestFull-api.md)
     + [x] [使用Thymeleaf、Freemarker、Velocity模板引擎渲染web视图](Doc/03.simple-web.md)
     + [x] [使用Swagger2构建强大的RESTful API文档](Doc/03.swagger2-api.md)
+    + [x] [Web应用的统一异常处理](Doc/03.exception-handler.md)
 * 数据访问
 * 事务管理
 * 其他内容

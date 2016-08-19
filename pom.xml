@@ -13,6 +13,7 @@
         <module>freeMarker-web</module>
         <module>velocity-web</module>
         <module>Swagger2-api</module>
+        <module>exception-handler</module>
     </modules>
     <packaging>pom</packaging>
 
