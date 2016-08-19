@@ -12,6 +12,7 @@
     + [x] [Web应用的统一异常处理](Doc/03.exception-handler.md)
 * 数据访问
     + [x] [使用JdbcTemplate](04.jdbcTemplate.md)
+    + [x] [使用Spring-data-jpa简化数据访问层（推荐）](04.spring-data-jpa.md)
 * 事务管理
 * 其他内容
 * 日志管理

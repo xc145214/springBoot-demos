@@ -15,6 +15,7 @@
         <module>Swagger2-api</module>
         <module>exception-handler</module>
         <module>jdbc-app</module>
+        <module>spring-data-jpa</module>
     </modules>
     <packaging>pom</packaging>
 
