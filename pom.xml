@@ -11,6 +11,7 @@
         <module>restfull-api</module>
         <module>properties-config</module>
         <module>freeMarker-web</module>
+        <module>velocity-web</module>
     </modules>
     <packaging>pom</packaging>
 
