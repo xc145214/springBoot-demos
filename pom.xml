@@ -12,6 +12,7 @@
         <module>properties-config</module>
         <module>freeMarker-web</module>
         <module>velocity-web</module>
+        <module>Swagger2-api</module>
     </modules>
     <packaging>pom</packaging>
 
