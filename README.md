@@ -1,13 +1,15 @@
 # Spring boot 系列
 
 * 快速入门
-    + [x] [Spring Boot快速入门](Doc/01.quick-start.md)
+    + [x] [快速入门](Doc/01.quick-start.md)
 * 工程配置
-    + [x] [Spring Boot属性配置文件详解](Doc/02.properties-config.md)
-    + [x] [Spring Boot工程结构推荐](Doc/02.project-structure.md)
+    + [x] [属性配置文件详解](Doc/02.properties-config.md)
+    + [x] [工程结构推荐](Doc/02.project-structure.md)
 * Web开发
-    + [x] [Spring Boot开发Web应用](Doc/03.simple-web.md)
-    + [x] [Spring Boot构建RESTful API与单元测试](Doc/03.RestFull-api.md)
+    + [x] [构建RESTful API与单元测试](Doc/03.RestFull-api.md)
+    + [x] [使用Thymeleaf、Freemarker、Velocity模板引擎渲染web视图](Doc/03.simple-web.md)
+    + [x] [使用模板引擎渲染web视图](Doc/03.freemarker-web.md)
+    + [x] [使用Freemarker模板引擎渲染web视图](Doc/03.freemarker-web.md)
 * 数据访问
 * 事务管理
 * 其他内容

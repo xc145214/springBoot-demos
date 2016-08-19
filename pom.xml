@@ -10,6 +10,7 @@
         <module>simple-web</module>
         <module>restfull-api</module>
         <module>properties-config</module>
+        <module>freeMarker-web</module>
     </modules>
     <packaging>pom</packaging>
 
