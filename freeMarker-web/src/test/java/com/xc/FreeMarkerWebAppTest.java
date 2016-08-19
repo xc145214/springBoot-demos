@@ -1,38 +1,35 @@
 package com.xc;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import com.xc.web.HelloController;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.http.MediaType;
+import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import static org.hamcrest.core.IsEqual.equalTo;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * Unit test for simple App.
  */
-public class FreeMarkerWebAppTest
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public FreeMarkerWebAppTest(String testName)
-    {
-        super( testName );
-    }
+@RunWith(SpringRunner.class)
+@WebMvcTest(HelloController.class)
+public class FreeMarkerWebAppTest{
 
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( FreeMarkerWebAppTest.class );
-    }
+    /*inject mock mvc*/
+    @Autowired
+    private MockMvc mvc;
 
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    @org.junit.Test
+    public void testHello() throws Exception {
+        mvc.perform(MockMvcRequestBuilders.get("/hello")
+                .accept(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk())
+                .andExpect(content().string(equalTo("Hello World")));
+
     }
 }
