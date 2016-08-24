@@ -17,6 +17,7 @@
         <module>jdbc-app</module>
         <module>spring-data-jpa</module>
         <module>jdbc-multi-data</module>
+        <module>spring-data-jpa-multi-data</module>
     </modules>
     <packaging>pom</packaging>
 
