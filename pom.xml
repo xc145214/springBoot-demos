@@ -16,6 +16,7 @@
         <module>exception-handler</module>
         <module>jdbc-app</module>
         <module>spring-data-jpa</module>
+        <module>jdbc-multi-data</module>
     </modules>
     <packaging>pom</packaging>
 
