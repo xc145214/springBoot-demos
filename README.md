@@ -11,10 +11,10 @@
     + [x] [使用Swagger2构建强大的RESTful API文档](Doc/03.swagger2-api.md)
     + [x] [Web应用的统一异常处理](Doc/03.exception-handler.md)
 * 数据访问
-    + [x] [使用JdbcTemplate](04.jdbcTemplate.md)
-    + [x] [使用Spring-data-jpa简化数据访问层（推荐）](04.spring-data-jpa.md)
-    + [x] [多数据源配置（一）：JdbcTemplate](04.jdbcTemplate-multi-datasource.md)
-    + [x] [多数据源配置（二）：Spring-data-jpa](04.spring-data-jpa-multi-datasource.md)
+    + [x] [使用JdbcTemplate](Doc/04.jdbcTemplate.md)
+    + [x] [使用Spring-data-jpa简化数据访问层（推荐）](Doc/04.spring-data-jpa.md)
+    + [x] [多数据源配置（一）：JdbcTemplate](Doc/04.jdbcTemplate-multi-datasource.md)
+    + [x] [多数据源配置（二）：Spring-data-jpa](Doc/04.spring-data-jpa-multi-datasource.md)
 * 事务管理
 * 其他内容
 * 日志管理
