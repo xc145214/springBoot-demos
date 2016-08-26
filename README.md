@@ -15,6 +15,7 @@
     + [x] [使用Spring-data-jpa简化数据访问层（推荐）](Doc/04.spring-data-jpa.md)
     + [x] [多数据源配置（一）：JdbcTemplate](Doc/04.jdbcTemplate-multi-datasource.md)
     + [x] [多数据源配置（二）：Spring-data-jpa](Doc/04.spring-data-jpa-multi-datasource.md)
+    + [x] [使用Redis数据库](Doc/04.spring-redis.md)
 * 事务管理
 * 其他内容
 * 日志管理
