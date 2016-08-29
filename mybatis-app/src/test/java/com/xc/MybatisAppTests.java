@@ -23,6 +23,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * 整合mybatis 测试。
@@ -32,12 +33,17 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Transactional
 public class MybatisAppTests {
 
     @Autowired
     private UserMapper userMapper;
 
 
+    /**
+     * 带回滚测试。
+     * @throws Exception
+     */
     @Test
     @Rollback
     public void findByName() throws Exception {
