@@ -20,6 +20,7 @@
         <module>spring-data-jpa-multi-data</module>
         <module>redis-app</module>
         <module>mongoDB-app</module>
+        <module>mybatis-app</module>
     </modules>
     <packaging>pom</packaging>
 

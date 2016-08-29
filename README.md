@@ -17,6 +17,7 @@
     + [x] [多数据源配置（二）：Spring-data-jpa](Doc/04.spring-data-jpa-multi-datasource.md)
     + [x] [使用Redis数据库](Doc/04.spring-redis.md)
     + [x] [使用MongoDB数据库](Doc/04.spring-mongoDB.md)
+    + [x] [整合MyBatis](Doc/04.spring-mybatis.md)
 * 事务管理
 * 其他内容
 * 日志管理
