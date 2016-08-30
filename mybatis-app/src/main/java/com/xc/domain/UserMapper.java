@@ -14,10 +14,9 @@
  */
 package com.xc.domain;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 /**
  *
@@ -32,5 +31,19 @@ public interface UserMapper {
 
     @Insert("INSERT INTO USER(NAME, AGE) VALUES(#{name}, #{age})")
     int insert(@Param("name") String name, @Param("age") Integer age);
+
+    @Update("UPDATE user SET age=#{age} WHERE name=#{name}")
+    void update(User user);
+
+    @Delete("DELETE FROM user WHERE id =#{id}")
+    void delete(Long id);
+
+    @Results({
+            @Result(property = "name", column = "name"),
+            @Result(property = "age", column = "age"),
+            @Result(property = "id", column = "id")
+    })
+    @Select("select * from user")
+    List<User> findAll();
 }
 
