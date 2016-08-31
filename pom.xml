@@ -21,6 +21,7 @@
         <module>redis-app</module>
         <module>mongoDB-app</module>
         <module>mybatis-app</module>
+        <module>schedule-task</module>
     </modules>
     <packaging>pom</packaging>
 
