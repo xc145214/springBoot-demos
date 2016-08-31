@@ -19,7 +19,10 @@
     + [x] [使用MongoDB数据库](Doc/04.spring-mongoDB.md)
     + [x] [整合MyBatis](Doc/04.spring-mybatis.md)
 * 事务管理
+    + [x] [使用事务管理](Doc/05.spring-transcation.md)
 * 其他内容
+    + [x] [使用@Scheduled创建定时任务](Doc/06.schedule-task.md)
+    + [x] [使用@Async实现异步调用](Doc/06.async-call.md)
 * 日志管理
 * 安全管理
 * 缓存支持

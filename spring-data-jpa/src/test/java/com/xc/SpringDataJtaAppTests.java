@@ -22,6 +22,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  *  Spring jta tests
@@ -37,6 +38,7 @@ public class SpringDataJtaAppTests {
     UserRepository userRepository;
 
     @Test
+    @Transactional
     public void testUser() throws Exception {
 
         // 创建10条记录
@@ -47,7 +49,7 @@ public class SpringDataJtaAppTests {
         userRepository.save(new User("EEE", 50));
         userRepository.save(new User("FFF", 60));
         userRepository.save(new User("GGG", 70));
-        userRepository.save(new User("HHH", 80));
+        userRepository.save(new User("HHHHHHHHHH", 80));
         userRepository.save(new User("III", 90));
         userRepository.save(new User("JJJ", 100));
 
