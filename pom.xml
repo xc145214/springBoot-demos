@@ -22,6 +22,7 @@
         <module>mongoDB-app</module>
         <module>mybatis-app</module>
         <module>schedule-task</module>
+        <module>async-call</module>
     </modules>
     <packaging>pom</packaging>
 
