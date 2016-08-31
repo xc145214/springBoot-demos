@@ -15,3 +15,6 @@ hs_err_pid*
 
 .idea/
 *.iml
+quick-start/target/
+simple-web/src/main/resources/public/
+simple-web/target/
