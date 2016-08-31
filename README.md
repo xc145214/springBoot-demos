@@ -24,6 +24,7 @@
     + [x] [使用@Scheduled创建定时任务](Doc/06.schedule-task.md)
     + [x] [使用@Async实现异步调用](Doc/06.async-call.md)
 * 日志管理
+    + [x] [Spring Boot默认日志配置](Doc/07.log-default.md)
 * 安全管理
 * 缓存支持
 * 邮件发送
