@@ -26,11 +26,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.json.JSONObject;
 import org.junit.Test;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,56 +60,27 @@ public class PostTests {
 
     @Test
     public void testUpdateCar() throws Exception {
-        CloseableHttpClient client = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("http://localhost:8080/updateCar");
-
+        String url = "http://localhost:8080/updateCar";
         String json = "{\"color\":\"White\",\"vin\":\"1234\",\"miles\":200}";
-        StringEntity entity = new StringEntity(json);
-        httpPost.setEntity(entity);
-        httpPost.setHeader("Content-type", "application/json");
-
-        CloseableHttpResponse response = client.execute(httpPost);
-        if (response.getStatusLine().getStatusCode() == 200) {
-            // 得到httpResponse的实体数据
-            HttpEntity httpEntity = response.getEntity();
-            System.out.println("result---------------" + getJsonFromEntity(httpEntity));
-        }
-
-        client.close();
+        System.out.println(post(url, json));
     }
 
     @Test
     public void testUpdateCars() throws Exception {
-        CloseableHttpClient client = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("http://localhost:8080/cars");
+        String url = "http://localhost:8080/cars";
 
         List<Car> cars = new ArrayList<>();
         cars.add(new Car("Blue", "TESLA", 300));
         cars.add(new Car("Green", "BMW", 300));
         cars.add(new Car("BLACK", "BYD", 300));
         String json = convertToObject(cars);
-
-        StringEntity entity = new StringEntity(json);
-        httpPost.setEntity(entity);
-        httpPost.setHeader("Content-type", "application/json");
-
-        CloseableHttpResponse response = client.execute(httpPost);
-        if (response.getStatusLine().getStatusCode() == 200) {
-            // 得到httpResponse的实体数据
-            HttpEntity httpEntity = response.getEntity();
-            String result = getJsonFromEntity(httpEntity);
-            System.out.println("result---------------" +result );
-            System.out.println("result---------------" + convertListFromString(result).size());
-        }
-
-        client.close();
+        System.out.println(post(url, json));
     }
 
 
     @Test
     public void testMulti() throws Exception {
-        CloseableHttpClient client = HttpClients.createDefault();
-        HttpPost httpPost = new HttpPost("http://localhost:8080/carsandtrucks");
+        String url= "http://localhost:8080/carsandtrucks";
 
         List<Car> cars = new ArrayList<>();
         cars.add(new Car("Blue", "TESLA", 300));
@@ -120,7 +92,20 @@ public class PostTests {
         req.setTruck(truck);
 
         String json = convertToObject(req);
-        System.out.println(">----------"+json);
+        System.out.println(post(url,json));
+    }
+
+    /**
+     * Post Util
+     * @param url
+     * @param json
+     * @return
+     * @throws IOException
+     */
+    String post(String url, String json) throws IOException {
+        String result = "";
+        CloseableHttpClient client = HttpClients.createDefault();
+        HttpPost httpPost = new HttpPost(url);
 
         StringEntity entity = new StringEntity(json);
         httpPost.setEntity(entity);
@@ -130,13 +115,11 @@ public class PostTests {
         if (response.getStatusLine().getStatusCode() == 200) {
             // 得到httpResponse的实体数据
             HttpEntity httpEntity = response.getEntity();
-            String result = getJsonFromEntity(httpEntity);
-            System.out.println("result---------------" +result );
+            result = getJsonFromEntity(httpEntity);
         }
-
         client.close();
+        return result;
     }
-
     /**
      * 将http响应的数据转换为字符串。
      *
