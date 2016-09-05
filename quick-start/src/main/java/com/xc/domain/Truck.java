@@ -9,6 +9,15 @@ public class Truck {
     private String color;
     private Integer miles;
 
+    public Truck() {
+    }
+
+    public Truck(String VIN, String color, Integer miles) {
+        this.VIN = VIN;
+        this.color = color;
+        this.miles = miles;
+    }
+
     public String getVIN() {
         return VIN;
     }
