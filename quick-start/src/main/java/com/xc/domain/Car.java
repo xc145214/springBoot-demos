@@ -8,6 +8,15 @@ public class Car {
     private String color;
     private Integer miles;
 
+    public Car() {
+    }
+
+    public Car(String VIN, String color, Integer miles) {
+        this.VIN = VIN;
+        this.color = color;
+        this.miles = miles;
+    }
+
     public String getVIN() {
         return VIN;
     }
@@ -31,4 +40,6 @@ public class Car {
     public void setMiles(Integer miles) {
         this.miles = miles;
     }
+
+
 }
