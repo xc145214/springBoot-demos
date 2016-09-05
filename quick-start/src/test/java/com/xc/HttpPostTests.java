@@ -1,7 +1,5 @@
 package com.xc;
 
-import org.apache.coyote.Request;
-import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.auth.AuthenticationException;
 import org.apache.http.auth.UsernamePasswordCredentials;
@@ -16,7 +14,6 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.junit.Test;
-import sun.org.mozilla.javascript.internal.ast.FunctionNode;
 
 import java.io.IOException;
 import java.util.ArrayList;
