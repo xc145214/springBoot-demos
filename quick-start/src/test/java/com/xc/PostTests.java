@@ -26,12 +26,12 @@ import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.json.JSONObject;
 import org.junit.Test;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -62,7 +62,13 @@ public class PostTests {
     public void testUpdateCar() throws Exception {
         String url = "http://localhost:8080/updateCar";
         String json = "{\"color\":\"White\",\"vin\":\"1234\",\"miles\":200}";
-        System.out.println(post(url, json));
+//        System.out.println(post(url, json));
+            JSONObject jsonObject= new JSONObject(json);
+
+        System.out.println(jsonObject.get("color"));
+        System.out.println(jsonObject.get("vin"));
+
+
     }
 
     @Test
@@ -74,7 +80,7 @@ public class PostTests {
         cars.add(new Car("Green", "BMW", 300));
         cars.add(new Car("BLACK", "BYD", 300));
         String json = convertToObject(cars);
-        System.out.println(post(url, json));
+        System.out.println(postJson(url, json));
     }
 
 
@@ -92,7 +98,9 @@ public class PostTests {
         req.setTruck(truck);
 
         String json = convertToObject(req);
-        System.out.println(post(url,json));
+
+        JSONObject jsonObject = new JSONObject(json);
+//        System.out.println(post(url,json));
     }
 
     /**
@@ -102,22 +110,37 @@ public class PostTests {
      * @return
      * @throws IOException
      */
-    String post(String url, String json) throws IOException {
+    String postJson(String url, String json)  {
         String result = "";
         CloseableHttpClient client = HttpClients.createDefault();
         HttpPost httpPost = new HttpPost(url);
+        CloseableHttpResponse response = null;
+        try {
+            StringEntity entity = new StringEntity(json);
+            httpPost.setEntity(entity);
+            httpPost.setHeader("Content-type", "application/json");
 
-        StringEntity entity = new StringEntity(json);
-        httpPost.setEntity(entity);
-        httpPost.setHeader("Content-type", "application/json");
-
-        CloseableHttpResponse response = client.execute(httpPost);
-        if (response.getStatusLine().getStatusCode() == 200) {
-            // 得到httpResponse的实体数据
-            HttpEntity httpEntity = response.getEntity();
-            result = getJsonFromEntity(httpEntity);
+             response = client.execute(httpPost);
+            if (response.getStatusLine().getStatusCode() == 200) {
+                // 得到httpResponse的实体数据
+                HttpEntity httpEntity = response.getEntity();
+                result = getJsonFromEntity(httpEntity);
+            }else{
+                System.out.println("Unexpected response status: " + response.getStatusLine().getStatusCode());
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(null != client){
+                try {
+                    response.close();
+                    client.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
         }
-        client.close();
+
         return result;
     }
     /**
