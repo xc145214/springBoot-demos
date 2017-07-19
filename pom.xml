@@ -23,6 +23,7 @@
         <module>mybatis-app</module>
         <module>schedule-task</module>
         <module>async-call</module>
+        <module>jwt-app</module>
     </modules>
     <packaging>pom</packaging>
 
